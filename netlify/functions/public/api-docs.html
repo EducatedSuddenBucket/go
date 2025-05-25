@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>HeatBlock - API Docs</title>
+  <meta name="description" content="HeatBlock - API Docs">
+  <link rel="icon" href="https://heatblock.esb.is-a.dev/icon_static.png" type="image/png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="canonical" href="https://heatblock.esb.is-a.dev/api/docs">
+  <meta name="keywords" content="Minecraft, server status, Minecraft server checker, Java server, Bedrock server, game servers, online status, multiplayer, Minecraft status, server ping, Minecraft tools">
+</head>
+<body>
+  <div class="top-nav">
+    <a href="/">Home</a>
+    <a href="/api/docs" class="active">API</a>
+  </div>
+  <div class="main-content">
+   
+    <div class="api-section">
+      <h2>Java Server Status</h2>
+      <p><strong>Endpoint:</strong> <code>/api/status/:serverAddress</code></p>
+      <p><strong>Method:</strong> GET</p>
+      <p><strong>Success Response:</strong></p>
+      <pre>{
+  "success": true,
+  "version": {
+    "name": "1.16.5",
+    "protocol": 754
+  },
+  "players": {
+    "max": 20,
+    "online": 5,
+    "list": [
+      {
+        "name": "EducatedSuddenBucket",
+        "id": "uuid1"
+      },
+      {
+        "name": "SomeoneElseInTheServer",
+        "id": "uuid2"
+      }
+    ]
+  },
+  "description": "A Minecraft Server",
+  "description_clean": "A Minecraft Server",
+  "latency": 123,
+  "favicon": "data:image/png;base64,..."
+}</pre>
+      <p><strong>Error Responses:</strong></p>
+      <pre>{
+  "success": false,
+  "error": {
+    "code": "timeout",
+    "message": "Connection to server timed out"
+  }
+}</pre>
+      <pre>{
+  "success": false,
+  "error": {
+    "code": "invalid_domain",
+    "message": "The domain name could not be resolved"
+  }
+}</pre>
+      <pre>{
+  "success": false,
+  "error": {
+    "code": "connection_refused",
+    "message": "Server refused the connection"
+  }
+}</pre>
+      <pre>{
+  "success": false,
+  "error": {
+    "code": "offline",
+    "message": "Server appears to be offline or unreachable"
+  }
+}</pre>
+    </div>
+    <div class="api-section">
+      <h2>Server Icon (Java Only)</h2>
+      <p><strong>Endpoint:</strong> <code>/api/png/:serverip</code></p>
+      <p><strong>Method:</strong> GET</p>
+      <p><strong>Success Response:</strong> Image (PNG)</p>
+      <p><strong>Error Responses:</strong></p>
+      <pre>{
+  "success": false,
+  "error": {
+    "code": "timeout",
+    "message": "Connection to server timed out"
+  }
+}</pre>
+      <pre>{
+  "success": false,
+  "error": {
+    "code": "invalid_domain",
+    "message": "The domain name could not be resolved"
+  }
+}</pre>
+      <pre>{
+  "success": false,
+  "error": {
+    "code": "connection_refused",
+    "message": "Server refused the connection"
+  }
+}</pre>
+      <pre>{
+  "success": false,
+  "error": {
+    "code": "offline",
+    "message": "Server appears to be offline or unreachable"
+  }
+}</pre>
+      <pre>{
+  "success": false,
+  "error": {
+    "code": "no_favicon",
+    "message": "Server does not have a favicon"
+  }
+}</pre>
+    </div>
+    <div class="api-section">
+      <h2>Bedrock Server Status</h2>
+      <p><strong>Endpoint:</strong> <code>/api/status/bedrock/:serverAddress</code></p>
+      <p><strong>Method:</strong> GET</p>
+      <p><strong>Success Response:</strong></p>
+      <pre>{
+  "success": true,
+  "motd": "Dedicated Server",
+  "motd_clean": "Dedicated Server",
+  "levelName": "Bedrock level",
+  "playersOnline": 0,
+  "playersMax": 10,
+  "gamemode": "Survival",
+  "serverId": "13460148391903423507",
+  "protocol": "486",
+  "version": "1.18.0",
+  "latency": 50
+}</pre>
+      <p><strong>Error Responses:</strong></p>
+      <pre>{
+  "success": false,
+  "error": {
+    "code": "timeout",
+    "message": "Connection to server timed out"
+  }
+}</pre>
+      <pre>{
+  "success": false,
+  "error": {
+    "code": "invalid_domain",
+    "message": "The domain name could not be resolved"
+  }
+}</pre>
+      <pre>{
+  "success": false,
+  "error": {
+    "code": "connection_refused",
+    "message": "Server refused the connection"
+  }
+}</pre>
+      <pre>{
+  "success": false,
+  "error": {
+    "code": "offline",
+    "message": "Server appears to be offline or unreachable"
+  }
+}</pre>
+    </div>
+  </div>
+</body>
+</html>
