@@ -2,7 +2,7 @@
   external_node_modules = ["express", "cors"]
   node_bundler = "esbuild"
 [[redirects]]
-  force = true
+  force = false
   from = "/*"
   status = 200
   to = "/.netlify/functions/index/:splat"
