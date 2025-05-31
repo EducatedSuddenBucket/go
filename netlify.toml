@@ -8,9 +8,9 @@
   to = "/.netlify/functions/index/:splat"
 [[redirects]]
   from = "/style.css"
-  to = "/public/style.css"
+  to = "/.public/style.css"
   status = 200
 [[redirects]]
   from = "/script.js"
-  to = "/public/script.js"
+  to = "/.public/script.js"
   status = 200
